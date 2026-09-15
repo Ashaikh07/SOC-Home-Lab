@@ -51,9 +51,13 @@ Problem: All Docker containers showing as Up but dashboard returning Internal Se
 Cause: Disk filled to 100% during deployment.
 Fix: Resized manager VM disk from 30GB to 64GB in UTM.
 
+Issue 6: Dashboard 500 error due to insufficient disk space
+Date: 15/09/26
+Problem: Wazuh dashboard timing out connecting to indexer.
+Root cause: 30GB disk completely full from Docker images  (15.89GB) + containers (8.6GB) + volumes (7.4GB) = 32GB on a 30GB disk.
+Fix: Resized VM disk from 30GB to 70GB in UTM, ran growpart and lvextend to expand the partition. Dashboard loaded successfully after restart.
 
 ## 8. Next Steps
-- Confirm Wazuh dashboard accessible at https://192.168.64.3
 - Install Wazuh agent on victim VM
 - Simulate first brute force attack
 - Write first detection rule
