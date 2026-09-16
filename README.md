@@ -10,8 +10,10 @@ attacks are simulated against a victim VM, detected by Wazuh, and documented as 
 - **Victim VM:** Ubuntu Desktop 24.04 ARM64, 2GB RAM, IP 192.168.64.4  Monitored endpoint with Wazuh agent installed
 
 ## Attacks Simulated
-| Attack | Tool | Alerts Generated | MITRE Technique |
-| SSH Brute Force | Hydra | 46+ auth failures, 770+ total alerts | T1110 Brute Force |
+1.  Attack: SSH Brute Force Tool 
+    Tool: Hydra
+    Alerts Generated: 46+ auth failures, 770+ total alerts 
+    MITRE Technique: T1110 Brute Force 
 
 ## Incident Reports
 - [Incident 1 — SSH Brute Force Attack](docs/incidentreport-1.md)
