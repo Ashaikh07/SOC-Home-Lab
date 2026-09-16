@@ -1,50 +1,51 @@
 # SOC Home Lab & SIEM Configuration
 
 ## Overview
-A personal home lab project simulating a Security Operations Centre (SOC) 
-environment. Wazuh open-source SIEM is deployed across virtualised machines 
-to replicate enterprise security monitoring with real-world attacks simulated 
-and documented.
-
-## Project Status
-
-## Progress Log
-
-### Session 1 - 14/09/26
-- Created two Ubuntu VMs in UTM (Manager: 192.168.64.3, Victim: 192.168.64.4)
-- Configured shared networking, resolved MAC address/IP conflict
-- Installed Docker on manager VM
-- Deployed Wazuh via Docker compose (containers running)
-- Dashboard access in progress - resolving VM display issue
+A personal home lab simulating a real Security Operations Centre (SOC) environment. Wazuh open-source SIEM is deployed via Docker across two virtualised machines to replicate enterprise security monitoring. Real-world 
+attacks are simulated against a victim VM, detected by Wazuh, and documented as structured incident reports.
 
 ## Lab Architecture
-- Wazuh Manager — central SIEM server receiving and processing alerts
-- Victim VMs — Windows/Linux machines with Wazuh agents installed
-- Attack Machine — used to simulate brute-force and exploitation techniques
+- **Host:** MacBook M3, 8GB RAM, UTM hypervisor
+- **Manager VM:** Ubuntu Server 24.04 ARM64, 4GB RAM, IP 192.168.64.5  Running Wazuh SIEM (server + indexer + dashboard) via Docker
+- **Victim VM:** Ubuntu Desktop 24.04 ARM64, 2GB RAM, IP 192.168.64.4  Monitored endpoint with Wazuh agent installed
 
 ## Attacks Simulated
-- [ ] SSH brute-force (Hydra)
-- [ ] RDP brute-force
-- [ ] Basic Metasploit exploitation
-- [ ] Suspicious process activity
-
-*(Will be updated with screenshots and findings as the lab progresses)*
-
-## Custom Detection Rules
-Wazuh detection rules written to identify simulated attack patterns — 
-see `/rules` folder
+| Attack | Tool | Alerts Generated | MITRE Technique |
+| SSH Brute Force | Hydra | 46+ auth failures, 770+ total alerts | T1110 Brute Force |
 
 ## Incident Reports
-Structured write-ups documenting each attack: what happened, how it was 
-detected, and recommended remediation — see `/reports` folder
+- [Incident 1 — SSH Brute Force Attack](docs/incidentreport-1.md)
+
+## Setup Troubleshooting Log
+Full documentation of the setup process including 7 issues encountered 
+and resolved — see [labnotes.md](docs/labnotes.md)
+
+## Screenshots
+### Threat Hunting Dashboard — Brute Force Attack Detected
+![Dashboard](screenshots/Threat-Hunting-Dashboard-1.png)
+
+### Active Agent — Victim VM Connected
+![Agent](screenshots/Wazuh-Agent-Created.png)
 
 ## Technologies Used
-- Wazuh SIEM
-- VirtualBox
-- Linux (Ubuntu)
-- Bash
+- Wazuh SIEM v4.14.7
+- Docker & Docker Compose
+- Ubuntu Server/Desktop ARM64
+- UTM Hypervisor (Apple M3)
+- Hydra
+- Linux, Bash, SSH
 
-## References & Learning
+## Next Steps
+- [x] Deploy Wazuh SIEM via Docker
+- [x] Connect victim VM as monitored agent
+- [x] Simulate SSH brute force attack
+- [x] Document first incident report
+- [ ] Write custom Wazuh detection rule
+- [ ] Simulate Nmap reconnaissance scan
+- [ ] Simulate Metasploit exploitation
+- [ ] Document further incident reports
+
+## References
 - [Wazuh Documentation](https://documentation.wazuh.com)
 - [MITRE ATT&CK Framework](https://attack.mitre.org)
-- TryHackMe — Pre-Security Path
+- [TryHackMe Pre-Security Path](https://tryhackme.com)
