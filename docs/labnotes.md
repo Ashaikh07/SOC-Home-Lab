@@ -7,17 +7,17 @@
 - **Wazuh Version:** 4.14.7 (deployed via Docker Compose)
 
 ## 2. Setup Log
-[14/09/26] — Created two Ubuntu VMs in UTM
-[14/09/26] — Configured shared network, resolved IP conflict
-[14/09/26] — Attempted Wazuh quickstart install (failed, see issues)
-[14/09/26] — Switched to Docker deployment
-[15/09/26] — Created fresh Ubuntu Server VM, installed Docker
-[15/09/26] — Deployed Wazuh via Docker Compose successfully
-[15/09/26] — Dashboard accessible at https://192.168.64.5
-[16/09/26] — Installed Wazuh agent on victim VM
-[16/09/26] — Victim VM appearing as active agent in dashboard
-[16/09/26] — Simulated SSH brute force attack using Hydra
-[16/09/26] — 770+ alerts generated, 46+ authentication failures detected
+[14/09/26] — Created two Ubuntu VMs in UTM,
+[14/09/26] — Configured shared network, resolved IP conflict,
+[14/09/26] — Attempted Wazuh quickstart install (failed, see issues),
+[14/09/26] — Switched to Docker deployment,
+[15/09/26] — Created fresh Ubuntu Server VM, installed Docker,
+[15/09/26] — Deployed Wazuh via Docker Compose successfully,
+[15/09/26] — Dashboard accessible at https://192.168.64.5,
+[16/09/26] — Installed Wazuh agent on victim VM,
+[16/09/26] — Victim VM appearing as active agent in dashboard,
+[16/09/26] — Simulated SSH brute force attack using Hydra,
+[16/09/26] — 770+ alerts generated, 46+ authentication failures detected,
 [16/09/26] — MITRE ATT&CK techniques identified: T1110 Brute Force
 
 ## 3. Wazuh Credentials
