@@ -22,7 +22,7 @@ Why This Matters:
 These misconfigurations directly contributed to the success of the SSH brute force simulation in Incident 1. A properly 
 hardened system with MaxAuthTries set to 3 would have significantly slowed down the Hydra attack.
 
-Recommended Remediation:
+Recommended Response:
 Edit /etc/ssh/sshd_config on the victim VM and add:
 - Set MaxAuthTries to 3 - Locking out anyone who fails logins 3 times
 - Set MaxSessions to 3 - Limit simultaneous connections
