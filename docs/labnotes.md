@@ -90,13 +90,3 @@ Date: 16/09/26
 Problem: SSH service failing to start on victim VM, preventing Hydra brute force simulation.
 Cause: Missing SSH host keys on the cloned VM.
 Fix: Ran sudo ssh-keygen -A to regenerate all missing host keys. SSH service started successfully.
-
-## 8. Next Steps
-- [x] Deploy Wazuh SIEM via Docker
-- [x] Connect victim VM as monitored agent
-- [x] Simulate SSH brute force attack
-- [x] Document first incident report
-- [x] Simulate Nmap reconnaissance scan
-- [ ] Write custom Wazuh detection rule
-- [ ] Simulate Metasploit exploitation
-- [ ] Document further incident reports
