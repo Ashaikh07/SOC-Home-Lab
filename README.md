@@ -17,6 +17,7 @@ attacks are simulated against a victim VM, detected by Wazuh, and documented as 
 
 ## Incident Reports
 - [Incident 1 — SSH Brute Force Attack](docs/incidentreport-1.md)
+- [Incident 1 — Nmap Reconnaissance Scan](docs/incidentreport-2.md)
 
 ## Setup Troubleshooting Log
 Full documentation of the setup process including 7 issues encountered 
@@ -25,6 +26,9 @@ and resolved — see [labnotes.md](docs/labnotes.md)
 ## Screenshots
 ### Threat Hunting Dashboard — Brute Force Attack Detected
 ![Dashboard](screenshots/Threat-Hunting-Dashboard-1.png)
+
+### Wazuh SCA Assessment — Following Nmap Reconnaissance Scan
+![Dashboard](screenshots/Wazuh-SCA-Assessment.png)
 
 ### Active Agent — Victim VM Connected
 ![Agent](screenshots/Wazuh-Agent-Created.png)
@@ -42,12 +46,14 @@ and resolved — see [labnotes.md](docs/labnotes.md)
 - [x] Connect victim VM as monitored agent
 - [x] Simulate SSH brute force attack
 - [x] Document first incident report
+- [x] Simulate Nmap reconnaissance scan
 - [ ] Write custom Wazuh detection rule
-- [ ] Simulate Nmap reconnaissance scan
 - [ ] Simulate Metasploit exploitation
 - [ ] Document further incident reports
 
 ## References
 - [Wazuh Documentation](https://documentation.wazuh.com)
 - [MITRE ATT&CK Framework](https://attack.mitre.org)
+- [Docker Documentation](https://docs.docker.com)
+- [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks)
 - [TryHackMe Pre-Security Path](https://tryhackme.com)
