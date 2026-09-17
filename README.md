@@ -6,8 +6,8 @@ attacks are simulated against a victim VM, detected by Wazuh, and documented as 
 
 ## Lab Architecture
 - **Host:** MacBook M3, 8GB RAM, UTM hypervisor
-- **Manager VM:** Ubuntu Server 24.04 ARM64, 4GB RAM, IP 192.168.64.5  Running Wazuh SIEM (server + indexer + dashboard) via Docker
-- **Victim VM:** Ubuntu Desktop 24.04 ARM64, 2GB RAM, IP 192.168.64.4  Monitored endpoint with Wazuh agent installed
+- **Manager VM:** Ubuntu Server 24.04 ARM64, 4GB RAM, Running Wazuh SIEM (server + indexer + dashboard) via Docker
+- **Victim VM:** Ubuntu Desktop 24.04 ARM64, 2GB RAM, Monitored endpoint with Wazuh agent installed
 
 ## Attacks Simulated
 1.  Attack: SSH Brute Force Tool 
