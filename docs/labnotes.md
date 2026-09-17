@@ -1,8 +1,8 @@
 # SOC Home Lab Documentation
 
 ## 1. Lab Architecture
-- **Manager VM:** Ubuntu Server 24.04 ARM64, 4GB RAM, IP 192.168.64.5
-- **Victim VM:** Ubuntu Desktop 24.04 ARM64, 2GB RAM, IP 192.168.64.4
+- **Manager VM:** Ubuntu Server 24.04 ARM64, 4GB RAM
+- **Victim VM:** Ubuntu Desktop 24.04 ARM64, 2GB RAM
 - **Host Machine:** MacBook M3, 8GB RAM, UTM hypervisor
 - **Wazuh Version:** 4.14.7 (deployed via Docker Compose)
 
