@@ -18,7 +18,11 @@
 [16/09/26] — Victim VM appearing as active agent in dashboard,
 [16/09/26] — Simulated SSH brute force attack using Hydra,
 [16/09/26] — 770+ alerts generated, 46+ authentication failures detected,
-[16/09/26] — MITRE ATT&CK techniques identified: T1110 Brute Force
+[16/09/26] — MITRE ATT&CK technique identified: T1110 Brute Force,
+[17/09/26] - Simulated Nmap Reconnaissance Scan using Nmap,
+[17/09/26] - OS identified and Port 22 identified to be running OpenSSH,
+[17/09/26] - Wazuh SCA triggered CIS assessment returning a security score,
+[17/09/26] - MITRE ATT&CK technique identified: T1595 Active Scanning
 
 ## 3. Wazuh Credentials
 URL: https://192.168.64.5
@@ -29,16 +33,27 @@ URL: https://192.168.64.5
 Date: 16/09/26
 Tool: Hydra
 Target: 192.168.64.4 (victim VM) port 22
-Command: hydra -l ashaikh -P passwords.txt ssh://192.168.64.4 -t 4
+Command: hydra -l user -P passwords.txt ssh://192.168.64.4 -t 4
 Result: 770 total alerts, 46 authentication failures detected
 MITRE Technique: T1110 - Brute Force, T1078 - Valid Accounts
-See: incident-report-001.md
+See: incidentreport-1.md
+
+**Attack 2: Nmap Reconnaissance Scan**
+Date: 17/09/26
+Tool: Nmap
+Target: 192.168.64.4
+Command: sudo nmap -sV -O 192.168.64.4
+Result: Port 22 identified as open running OpenSSH 9.6p1, OS identified as Linux. 
+Wazuh SCA automatically triggered CIS benchmark assessment revealing 48/100 security score.
+MITRE Technique: T1595 Active Scanning, T1046 Network Service Discovery
+See: incidentreport-2.md
 
 ## 5. Detection Rules Written
 [in progress — custom rules to be added]
 
 ## 6. Incident Reports
 - Incident 1: SSH Brute Force Attack (16/09/26)
+- Incdient 2: Nmap Reconnaissance Scan (17/09/26)
 
 ## 7. Issues & How I Fixed Them
 
@@ -81,7 +96,7 @@ Fix: Ran sudo ssh-keygen -A to regenerate all missing host keys. SSH service sta
 - [x] Connect victim VM as monitored agent
 - [x] Simulate SSH brute force attack
 - [x] Document first incident report
+- [x] Simulate Nmap reconnaissance scan
 - [ ] Write custom Wazuh detection rule
-- [ ] Simulate Nmap reconnaissance scan
 - [ ] Simulate Metasploit exploitation
 - [ ] Document further incident reports
